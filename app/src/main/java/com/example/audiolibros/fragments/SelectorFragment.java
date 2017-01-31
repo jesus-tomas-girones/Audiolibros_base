@@ -69,7 +69,8 @@ public class SelectorFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int opcion) {
                         switch (opcion) {
                             case 0: //Compartir
-                                Libro libro = vectorLibros.elementAt(id);
+                                //Libro libro = vectorLibros.elementAt(id);
+                                Libro libro = adaptador.getItem(id); //Faltaba esta línea
                                 Intent i = new Intent(Intent.ACTION_SEND);
                                 i.setType("text/plain");
                                 i.putExtra(Intent.EXTRA_SUBJECT, libro.titulo);
@@ -86,7 +87,7 @@ public class SelectorFragment extends Fragment {
                                             }
                                         })
                                         .show();
-
+                                break;  //Faltaba esta línea
                             case 2: //Insertar
                                 int posicion = recyclerView.getChildLayoutPosition(v);
                                 adaptador.insertar((Libro) adaptador.getItem(posicion));
