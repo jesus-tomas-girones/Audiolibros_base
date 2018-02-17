@@ -87,7 +87,7 @@ public class DetalleFragment extends Fragment implements
         mediaController.setMediaPlayer(this);
         mediaController.setAnchorView(getView().findViewById(
                 R.id.fragment_detalle));
-        mediaController.setPadding(0, 0, 0, 110);
+//        mediaController.setPadding(0, 0, 0, 110);
         mediaController.setEnabled(true);
         mediaController.show();
     }
