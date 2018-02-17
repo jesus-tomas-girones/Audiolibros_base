@@ -9,7 +9,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:contentDescription="portada" />
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"

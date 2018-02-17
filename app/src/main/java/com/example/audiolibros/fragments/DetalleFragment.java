@@ -53,7 +53,7 @@ public class DetalleFragment extends Fragment implements
 
     private void ponInfoLibro(int id, View vista) {
         Libro libro = ((Aplicacion) getActivity().getApplication())
-                .getVectorLibros().elementAt(id);
+                .getListaLibros().get(id);
         ((TextView) vista.findViewById(R.id.titulo)).setText(libro.titulo);
         ((TextView) vista.findViewById(R.id.autor)).setText(libro.autor);
         //((ImageView) vista.findViewById(R.id.portada)).setImageResource(libro.recursoImagen);

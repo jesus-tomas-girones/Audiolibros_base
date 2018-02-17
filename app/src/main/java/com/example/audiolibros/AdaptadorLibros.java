@@ -13,20 +13,21 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 
+import java.util.List;
 import java.util.Vector;
 
 public class AdaptadorLibros extends
         RecyclerView.Adapter<AdaptadorLibros.ViewHolder> {
     private LayoutInflater inflador;      //Crea Layouts a partir del XML
-    protected Vector<Libro> vectorLibros; //Vector con libros a visualizar
+    protected List<Libro> listaLibros; //Vector con libros a visualizar
     private Context contexto;
     private View.OnClickListener onClickListener;
     private View.OnLongClickListener onLongClickListener;
 
-    public AdaptadorLibros(Context contexto, Vector<Libro> vectorLibros) {
+    public AdaptadorLibros(Context contexto, List<Libro> listaLibros) {
         inflador = (LayoutInflater) contexto
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.vectorLibros = vectorLibros;
+        this.listaLibros = listaLibros;
         this.contexto = contexto;
     }
 
@@ -56,7 +57,7 @@ public class AdaptadorLibros extends
     // Usando como base el ViewHolder y lo personalizamos
     @Override
     public void onBindViewHolder(final ViewHolder holder, int posicion) {
-        Libro libro = vectorLibros.elementAt(posicion);
+        Libro libro = listaLibros.get(posicion);
         //holder.portada.setImageResource(libro.recursoImagen);
         holder.titulo.setText(libro.titulo);
         Aplicacion aplicacion = (Aplicacion) contexto.getApplicationContext();
@@ -87,7 +88,7 @@ public class AdaptadorLibros extends
 
     // Indicamos el número de elementos de la lista
     @Override public int getItemCount() {
-        return vectorLibros.size();
+        return listaLibros.size();
     }
 
     public void setOnItemClickListener(View.OnClickListener onClickListener) {

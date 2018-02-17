@@ -1,5 +1,7 @@
 package com.example.audiolibros;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 public class Libro {
@@ -24,10 +26,9 @@ public class Libro {
         this.genero = genero; this.novedad = novedad; this.leido = leido;
     }
 
-    public static Vector<Libro> ejemploLibros() {
-        final String SERVIDOR =
-                "http://www.dcomg.upv.es/~jtomas/android/audiolibros/";
-        Vector<Libro> libros = new Vector<Libro>();
+    public static List<Libro> ejemploLibros() {
+        final String SERVIDOR = "http://mmoviles.upv.es/audiolibros/";
+        List<Libro> libros = new ArrayList<Libro>();
         libros.add(new Libro("Kappa", "Akutagawa",
                 SERVIDOR+"kappa.jpg", SERVIDOR+"kappa.mp3",
                 Libro.G_S_XIX, false, false));

@@ -33,14 +33,14 @@ public class SelectorFragment extends Fragment {
     private Activity actividad;
     private RecyclerView recyclerView;
     private AdaptadorLibrosFiltro adaptador;
-    private Vector<Libro> vectorLibros;
+    //private Vector<Libro> vectorLibros;
 
     @Override public void onAttach(Activity actividad) {
         super.onAttach(actividad);
         this.actividad = actividad;
         Aplicacion app = (Aplicacion) actividad.getApplication();
         adaptador = app.getAdaptador();
-        vectorLibros = app.getVectorLibros();
+        //Vector<Libro> vectorLibros = app.getVectorLibros();
     }
 
     @Override public View onCreateView(LayoutInflater inflador, ViewGroup
@@ -90,7 +90,7 @@ public class SelectorFragment extends Fragment {
                                 break;  //Faltaba esta línea
                             case 2: //Insertar
                                 int posicion = recyclerView.getChildLayoutPosition(v);
-                                adaptador.insertar((Libro) adaptador.getItem(posicion));
+                                adaptador.insertar(adaptador.getItem(posicion));
                                 adaptador.notifyDataSetChanged();
                                 Snackbar.make(v,"Libro insertado", Snackbar.LENGTH_INDEFINITE)
                                         .setAction("OK", new View.OnClickListener() {
